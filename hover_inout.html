@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hover In/Out</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		body{
+			background-image: url('safari.jpg');
+		}
+		#wrapper{
+			border: 1px solid black;
+			width: 1200px;
+			margin: 110px auto;
+		}
+		img{
+			width: 297px; 
+		}
+		#header{
+			text-align: center;
+			color: #4eabd7;
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('img').hover(function(){
+				$(this).attr('temp', $(this).attr('src'));
+				$(this).attr('src', $(this).attr('data-alt-src'));
+				$(this).attr('data-alt-src', $(this).attr('temp'));
+
+			});
+		});	
+	</script>
+</head>
+<body>
+	<div id="header">
+		<h1>AIR JORDANS</h1>
+	</div>
+	<div id="wrapper">
+		<!-- <div> -->
+			<img src="A.jpg" data-alt-src="B.jpg" temp=''>
+		<!-- </div> -->
+		<!-- <div> -->
+			<img src="A-1.jpg" data-alt-src="B-1.jpg" temp=''>
+		<!-- </div> -->
+		<!-- <div> -->
+			<img src="A-2.jpg" data-alt-src="B-2.jpg" temp=''>
+		<!-- </div> -->
+		<!-- <div> -->
+			<img src="A-3.jpg" data-alt-src="B-3.jpg" temp=''>
+		<!-- </div> -->
+	</div>
+
+</body>
+</html>
